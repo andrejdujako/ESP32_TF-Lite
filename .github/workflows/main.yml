@@ -1,0 +1,50 @@
+name: Start automated tests
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description: Select the environment
+        options:
+        - NL
+        - SR
+        - CA
+      choice:
+        type: choice
+        description: Choose a Team
+        options:
+        - Team1
+        - Team2
+        - Team3
+        - Team4
+        - Team5
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install GitPython
+        run: | 
+          pip install GitPython
+          pip install pyyaml
+          pip install PyGithub
+          pip install ruamel.yaml
+
+      - name: Set PYTHONPATH
+        run: |
+          echo "export PYTHONPATH=\$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
+
+      - name: Run Python script
+ 
+        run: |
+          echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
+          echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
+          
