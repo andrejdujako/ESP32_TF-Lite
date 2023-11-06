@@ -9,10 +9,12 @@ def main():
     # Define the second input attribute
     parser.add_argument("input2", type=str, help="The second input attribute")
 
+    parser.add_argument("input3", type=str, help="The third input attribute")
+    
     args = parser.parse_args()
 
     # Perform some operation with the input attributes
-    print(f"The result of {args.input1} + {args.input2}")
+    print(f"The result of {args.input1} + {args.input2} + {args.input3}")
 
 if __name__ == "__main__":
     main()
