@@ -5,6 +5,7 @@ on:
     inputs:
       environment:
         description: 'Specify ENV: NL, SR, CA'
+        type: choice
         required: true
         options:
         - nl_test
@@ -25,6 +26,7 @@ on:
         - Team5
       dropdown_values:
         description: 'Select options from both dropdowns'
+        type: choice
         required: true
         default: "OptionA-OptionX"
         options:
