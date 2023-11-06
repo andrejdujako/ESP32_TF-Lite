@@ -7,9 +7,12 @@ on:
         description: 'Specify ENV: NL, SR, CA'
         required: true
         options:
-        - NL
-        - SR
-        - CA
+        - nl_test
+        - nl_dev
+        - sr_test
+        - sr_dev
+        - ca_test
+        - ca_dev
       choice:
         type: choice
         description: Choose a Team
@@ -49,4 +52,4 @@ jobs:
         run: |
           echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
           echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
-          
+          python run.py ${{ inputs.environment }} ${{ inputs.choice }}
