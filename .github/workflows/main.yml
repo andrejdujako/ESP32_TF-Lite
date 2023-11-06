@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        type: environment
-        description: Select the environment
+        description: 'Select the environment'
+        required: true
         options:
         - NL
         - SR
@@ -13,12 +13,14 @@ on:
       choice:
         type: choice
         description: Choose a Team
+        required: true
         options:
         - Team1
         - Team2
         - Team3
         - Team4
         - Team5
+      
 
 jobs:
   deploy:
