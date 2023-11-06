@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Select the environment'
+        description: 'Specify ENV: NL, SR, CA'
         required: true
         options:
         - NL
@@ -44,7 +44,7 @@ jobs:
         run: |
           echo "export PYTHONPATH=\$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
-      - name: Run Python script
+      - name: Execute Tests
  
         run: |
           echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
