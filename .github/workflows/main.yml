@@ -23,6 +23,16 @@ on:
         - Team3
         - Team4
         - Team5
+      dropdown_values:
+        description: 'Select options from both dropdowns'
+        required: true
+        default: "OptionA-OptionX"
+        options:
+        - test
+        - test2
+        - test3
+      
+      
       
 
 jobs:
