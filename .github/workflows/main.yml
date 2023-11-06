@@ -57,4 +57,5 @@ jobs:
         run: |
           echo "environment is ${{ github.event.inputs.environment }} / ${{ inputs.environment }}"
           echo "choice is ${{ github.event.inputs.choice }}" / ${{ inputs.choice }}
-          python src/run.py ${{ inputs.environment }} ${{ inputs.choice }}
+          echo "dropdown is ${{ github.event.inputs.dropdown_values }} / ${{ inputs.dropdown_values }}"
+          python src/run.py ${{ inputs.environment }} ${{ inputs.choice }} ${{ inputs.dropdown_values }}
