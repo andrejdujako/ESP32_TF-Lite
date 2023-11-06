@@ -8,12 +8,17 @@ on:
         type: choice
         required: true
         options:
-        - nl_test
-        - nl_dev
-        - sr_test
-        - sr_dev
-        - ca_test
-        - ca_dev
+        - nl
+        - sr
+        - ca
+      dropdown_values:
+        description: 'Select Dev or Test'
+        type: choice
+        required: true
+        default: "test"
+        options:
+        - test
+        - dev
       choice:
         type: choice
         description: Choose a Team
@@ -24,18 +29,6 @@ on:
         - Team3
         - Team4
         - Team5
-      dropdown_values:
-        description: 'Select options from both dropdowns'
-        type: choice
-        required: true
-        default: "OptionA-OptionX"
-        options:
-        - test
-        - test2
-        - test3
-      
-      
-      
 
 jobs:
   deploy:
