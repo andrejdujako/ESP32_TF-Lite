@@ -30,7 +30,7 @@ on:
         - Team4
         - Team5
 
-run-name: ${{ inputs.environment }} ${{ inputs.choice }} ${{ inputs.dropdown_values }}
+run-name: Run for ${{ inputs.choice }} on ${{ inputs.dropdown_values }}-${{ inputs.environment }} with user -
 
 jobs:
   deploy:
