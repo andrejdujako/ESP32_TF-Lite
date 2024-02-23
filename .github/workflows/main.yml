@@ -1,5 +1,5 @@
 name: Start automated tests
-run-name: TESTR
+
 on:
   workflow_dispatch:
     inputs:
@@ -29,6 +29,8 @@ on:
         - Team3
         - Team4
         - Team5
+
+run-name: ${{ inputs.environment }} ${{ inputs.choice }} ${{ inputs.dropdown_values }}
 
 jobs:
   deploy:
